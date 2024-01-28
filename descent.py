@@ -1,3 +1,20 @@
+# Layers of Descent - text adventure game with combat system
+# Copyright (C) 2024 Layers of Descent Development Team
+#
+# This file is part of Layers of Descent.
+#
+# Layers of Descent is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
     #####################################
     #Willkommen in meinem Spiel.        #
@@ -7,9 +24,8 @@
     #Enjoy!                             #
     #####################################
 
-
 #variables
-Item1 = 0.0 
+Item1 = 0.0
 BaseHp=20
 RoomHeals=0
 Hp=20
@@ -32,7 +48,7 @@ def FIGHT(EnAt,EnDf,EnNm,EnSt,EnWk,EnDd,EnGl,Esc):#basis for a simple customisab
     global KILLS
     print(str(EnNm)+str(EnSt)) #enemy approaches
 
-    while True: 
+    while True:
         print("")
         if EnDf<1:#enemy death
             KILLS=KILLS+1
@@ -91,81 +107,80 @@ def RoomDecide(Rm,Rn):#decides what to do in the room
                 print("You have",RoomHeals,"heals left for this room")
             else:
                 print("You have used all your healing spells for this room")
-            
-            
 
-#end of defenitions        
-        
+
+
+#end of defenitions
+
 #story begins
 print ("Welcome to my tunnels of deadly deception ^TM^.\nPress enter to continue...")
 input("")
 
-print ("You will face many dangerous challenges as you travel deeper into the tunnels.") 
+print ("You will face many dangerous challenges as you travel deeper into the tunnels.")
 input("")
 
-print ("If you are defeated by the trials, you will never return to the surface...") 
+print ("If you are defeated by the trials, you will never return to the surface...")
 input("")
 
 print ("Good luck!")
 input("")
 
-print ("") 
+print ("")
 
-print ("") 
+print ("")
 
-while True : 
+while True :
 
     print ("You find yourself in a dark room. On the floor are:") #select weapon
 
-    Item1= input("A: 1 SWORD (At 3 Df 2 Mg 3 \nB: 1 AXE (At 3 Df 3 Mg 2 \nC: 1 STAFF (At 2 Df 3 Mg 3") 
+    Item1= input("A: 1 SWORD (At 3 Df 2 Mg 3 \nB: 1 AXE (At 3 Df 3 Mg 2 \nC: 1 STAFF (At 2 Df 3 Mg 3")
 
-    if Item1 == "A" or Item1 == "a": 
+    if Item1 == "A" or Item1 == "a":
 
-        print("You pick up the SWORD. Your STATS are \nAt 3 Df 2 Mg 3 \nyou feel SKILLED") 
+        print("You pick up the SWORD. Your STATS are \nAt 3 Df 2 Mg 3 \nyou feel SKILLED")
 
-        At=3.0 
+        At=3.0
 
         Df=2.0
 
-        Mg=3.0 
+        Mg=3.0
 
-        break  
+        break
 
-    if Item1 == "B" or Item1 == "b": 
+    if Item1 == "B" or Item1 == "b":
 
-        print("You pick up the AXE. Your STATS are \nAt 3 Df 3 Mg 2 \nyou feel POWERFUL") 
+        print("You pick up the AXE. Your STATS are \nAt 3 Df 3 Mg 2 \nyou feel POWERFUL")
 
-        At=3.0 
+        At=3.0
 
-        Df=3.0 
+        Df=3.0
 
-        Mg=2.0 
+        Mg=2.0
 
-        break 
+        break
 
-    if Item1 == "C" or Item1 == "c": 
+    if Item1 == "C" or Item1 == "c":
 
-        print("You pick up the STAFF. Your STATS are \nAt 2 Df 3 Mg 3") 
+        print("You pick up the STAFF. Your STATS are \nAt 2 Df 3 Mg 3")
 
-        print("You feel a MENACING presence watching you") 
+        print("You feel a MENACING presence watching you")
 
-        At=2.0 
+        At=2.0
 
-        Df=3.0 
+        Df=3.0
 
-        Mg=3.0 
+        Mg=3.0
 
-        break 
+        break
 
-    else: 
+    else:
 
-        print("err") 
+        print("err")
 input("")
 
-print("You step into the first room...") 
+print("You step into the first room...")
 input("")
 
 FIGHT(5,5,"Goblint"," jumps out!\nIt's a monster! Use your skills to survive this attack!"," is shedding everwhere.","Dust explodes everwhere.",5,1)#starts a FIGHT. Text is customisable.
 RoomDecide("Beginnner room.",1)
 print(KILLS)
-
