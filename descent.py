@@ -30,17 +30,20 @@ BaseHp=20
 RoomHeals=0
 Hp=20
 GOLD=0
-At=1
-Df=1
+player_attack=1
+player_defense=1
 Mg=1
 KILLS=0
 Choice="x"
 #definitions
-def CODEX():#prints a comprehensive manual
-    print ("CODEX")
+
+def codex():
+    """Prints a comprehensive manual"""
+    print("CODEX")
+
 def FIGHT(EnAt,EnDf,EnNm,EnSt,EnWk,EnDd,EnGl,Esc):#basis for a simple customisable fight
-    global At
-    global Df
+    global player_attack
+    global player_defense
     global Mg
     global Hp
     global BaseHp
@@ -61,12 +64,12 @@ def FIGHT(EnAt,EnDf,EnNm,EnSt,EnWk,EnDd,EnGl,Esc):#basis for a simple customisab
         if EnDf<3:#enemy weak
             print(str(EnNm)+str(EnWk))
         print(EnNm+" strikes")#enemy attack
-        Hp=Hp-(EnAt/Df)
+        Hp=Hp-(EnAt/player_defense)
         print ("Hp=","%.1f" %(Hp,))
         action=input("Do you:\na)hit\nb)magic\nc)run")#selects action
         if action=="a" or action=="A":#attacks
             print("you attack!")
-            EnDf=EnDf-At
+            EnDf=EnDf-player_attack
         elif action=="b" or action=="B":#heals
             print("there is a flash of light")
             Hp=Hp+Mg
@@ -85,26 +88,29 @@ def FIGHT(EnAt,EnDf,EnNm,EnSt,EnWk,EnDd,EnGl,Esc):#basis for a simple customisab
                 print("You cannot escape!")
         else:
             print("err")
-def RoomDecide(Rm,Rn):#decides what to do in the room
+def RoomDecide(Rm,Rn): #decides what to do in the room
     global GOLD
     global Hp
     global BaseHp
     global Choice
     global RoomHeals
-    while Choice != "a" or Choice != "A":
-        Choice=input("\na)explore the room\nb)check stats\nc)heal\nd)CODEX")
-        if Choice== "a" or Choice=="A":
+    while Choice != "a":
+        Choice=input("\na)explore the room\nb)check stats\nc)heal\nd)CODEX").lower()
+        if Choice== "a":
             print("")
-        if Choice== "b" or Choice=="B":
-            print("You have:\n",At,"At\n",Df,"Df\n",Mg,"Mg\n",Hp, "Hp\n",GOLD,"GOLD\n\nYour Max Hp is",BaseHp,"\nYou are in room",Rn,Rm)
-        if Choice== "d" or Choice=="D":
-            CODEX
-        if Choice== "c" or Choice=="C":
+        if Choice== "b":
+            print("You have:\n",player_attack,"At\n",player_defense,"Df\n",Mg,"Mg\n",Hp, "Hp\n",GOLD,"GOLD\n\nYour Max Hp is",BaseHp,"\nYou are in room",Rn,Rm)
+        if Choice== "d":
+            codex()
+        if Choice== "c":
             if RoomHeals>0:
-                print("There is a bright flash of light\nYou have",Hp,"\nYour Max Hp is",BaseHp,"\nYou can only heal once per room")
-                Hp=Hp+Mg
-                RoomHeals=RoomHeals-1
-                print("You have",RoomHeals,"heals left for this room")
+                if Hp == BaseHp:
+                    print("You are already at full health")
+                else:
+                    Hp=Hp+Mg
+                    RoomHeals=RoomHeals-1
+                    print("There is a bright flash of light\nYou now have",Hp,"\nYour Max Hp is",BaseHp,"\nYou can only heal once per room")
+                    print("You have",RoomHeals,"heal(s) left for this room")
             else:
                 print("You have used all your healing spells for this room")
 
@@ -113,69 +119,55 @@ def RoomDecide(Rm,Rn):#decides what to do in the room
 #end of defenitions
 
 #story begins
-print ("Welcome to my tunnels of deadly deception ^TM^.\nPress enter to continue...")
+print("Welcome to Layers of Descent ^TM^.\nPress enter to continue...")
 input("")
 
-print ("You will face many dangerous challenges as you travel deeper into the tunnels.")
+print("You will face many dangerous challenges as you travel deeper into the tunnels.")
+print("[ENTER=Continue]")
 input("")
 
-print ("If you are defeated by the trials, you will never return to the surface...")
+print("If you are defeated by the trials, you will never return to the surface...")
+print("[ENTER=Continue]")
 input("")
 
-print ("Good luck!")
+print("Good luck!")
+print("[ENTER=Continue]")
 input("")
 
-print ("")
+print("")
 
-print ("")
+print("")
 
-while True :
+while True:
 
-    print ("You find yourself in a dark room. On the floor are:") #select weapon
-
-    Item1= input("A: 1 SWORD (At 3 Df 2 Mg 3 \nB: 1 AXE (At 3 Df 3 Mg 2 \nC: 1 STAFF (At 2 Df 3 Mg 3")
+    print("You find yourself in a dark room. On the floor are:") #select weapon
+    Item1 = input("A: 1 SWORD (At 3 Df 2 Mg 3) \nB: 1 AXE (At 3 Df 3 Mg 2) \nC: 1 STAFF (At 2 Df 3 Mg 3)")
 
     if Item1 == "A" or Item1 == "a":
-
         print("You pick up the SWORD. Your STATS are \nAt 3 Df 2 Mg 3 \nyou feel SKILLED")
-
-        At=3.0
-
-        Df=2.0
-
+        player_attack=3.0
+        player_defense=2.0
         Mg=3.0
-
         break
 
     if Item1 == "B" or Item1 == "b":
-
         print("You pick up the AXE. Your STATS are \nAt 3 Df 3 Mg 2 \nyou feel POWERFUL")
-
-        At=3.0
-
-        Df=3.0
-
+        player_attack=3.0
+        player_defense=3.0
         Mg=2.0
-
         break
 
     if Item1 == "C" or Item1 == "c":
-
         print("You pick up the STAFF. Your STATS are \nAt 2 Df 3 Mg 3")
-
         print("You feel a MENACING presence watching you")
-
-        At=2.0
-
-        Df=3.0
-
+        player_attack=2.0
+        player_defense=3.0
         Mg=3.0
-
         break
 
     else:
+        print("Invalid choice: " + str(Item1))
 
-        print("err")
 input("")
 
 print("You step into the first room...")
