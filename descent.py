@@ -31,7 +31,8 @@ under certain conditions; type "L" for details."""
 
 CREDITS = """Layers of Descent Credits
 
-Coming soon"""
+MyBrianHurt5 - concept and code
+estella144 - concept and code"""
 
 WARRANTY = """15. Disclaimer of Warranty.
 
