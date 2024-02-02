@@ -206,7 +206,7 @@ Item1 = 0.0
 base_hp=20
 RoomHeals=0
 hp=20
-gold=0
+GOLD=0
 player_attack=1
 player_defense=1
 player_magic=1
@@ -237,7 +237,7 @@ def fight(enemy_attack,enemy_defense,enemy_name,EnSt,EnWk,EnDd,reward,Esc):#basi
     global player_magic
     global hp
     global base_hp
-    global gold
+    global GOLD
     global kills
     print(str(enemy_name)+str(EnSt)) #enemy approaches
 
@@ -247,9 +247,9 @@ def fight(enemy_attack,enemy_defense,enemy_name,EnSt,EnWk,EnDd,reward,Esc):#basi
         if enemy_defense<=0:
         # Enemy dead
             kills += 1
-            gold += reward
+            GOLD += reward
             print(f"You Win! Reward: {reward} gold")
-            print("You now have", gold, "GOLD")
+            print("You now have", GOLD, "GOLD")
             print("Fight end")
             print("")
             break
@@ -287,7 +287,7 @@ def fight(enemy_attack,enemy_defense,enemy_name,EnSt,EnWk,EnDd,reward,Esc):#basi
             print("Invalid choice")
 
 def RoomDecide(Rm,Rn): #decides what to do in the room
-    global gold
+    global GOLD
     global hp
     global base_hp
     global Choice
@@ -299,7 +299,7 @@ def RoomDecide(Rm,Rn): #decides what to do in the room
         if Choice == "a":
             print("")
         elif Choice == "b":
-            print("You have:\n",player_attack,"At\n",player_defense,"Df\n",player_magic,"Mg\n",hp, "Hp\n",gold,"GOLD\n\nYour Max Hp is",base_hp,"\nYou are in room",Rn,Rm)
+            print("You have:\n",player_attack,"At\n",player_defense,"Df\n",player_magic,"Mg\n",hp, "Hp\n",GOLD,"GOLD\n\nYour Max Hp is",base_hp,"\nYou are in room",Rn,Rm)
         elif Choice == "d":
             codex()
         elif Choice == "c":
@@ -386,6 +386,6 @@ input("[ENTER=Continue]")
 print("You step into the first room...")
 input("[ENTER=Continue]")
 
-fight(5,5,"Goblin"," jumps out!\nIt's a monster! Use your skills to survive this attack!"," is shedding everywhere. It looks weak!","Dust explodes everywhere!",5,1)
+fight(5,5,"Goblint"," jumps out!\nIt's a monster! Use your skills to survive this attack!"," is shedding everywhere. It looks weak!","Dust explodes everywhere!",5,1)
 RoomDecide("Beginnner room.",1)
 print(kills)
