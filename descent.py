@@ -218,6 +218,18 @@ def codex():
     """Prints a comprehensive manual"""
     print("CODEX CAVERNA\n\nWelcome to the Codex of Caverna. An indespensible guide to these deadly tunnels.\nThis is not the only codex you will find down here, but I hope it will serve you well.\nGood luck...")
     CODEXCHOICE=input("Select a chapter:\na) Journal\nb) Monsters\nc) Items\n d) Abilities\ne) Exit")
+    while CODEXCHOICE != "e" and CODEXCHOICE != "E":
+        if CODEXCHOICE == "a" or CODEXCHOICE == "A":
+            print("")
+        if CODEXCHOICE == "b" or CODEXCHOICE == "B":
+            print("")
+        if CODEXCHOICE == "c" or CODEXCHOICE == "C":
+            print("")
+        if CODEXCHOICE == "d" or CODEXCHOICE == "D":
+            print("")
+    print("exit")
+    input()
+        
     
 def fight(enemy_attack,enemy_defense,enemy_name,EnSt,EnWk,EnDd,reward,Esc):#basis for a simple customisable fight
     global player_attack
