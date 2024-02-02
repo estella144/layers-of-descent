@@ -200,7 +200,7 @@ unpacking, reading or copying."""
 
 CONDITIONS = [CONDITIONS_1, CONDITIONS_2, CONDITIONS_3, CONDITIONS_4,
               CONDITIONS_5, CONDITIONS_6, CONDITIONS_7]
-#Hi
+#If you see this message you are a dirty hacker get out of the code right now
 #variables
 Item1 = 0.0
 base_hp=20
