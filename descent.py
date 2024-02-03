@@ -217,24 +217,25 @@ Choice="x"
 def codex():
     """Prints a comprehensive manual"""
     print("CODEX CAVERNA\n\nWelcome to the Codex of Caverna. An indespensible guide to these deadly tunnels.\nThis is not the only codex you will find down here, but I hope it will serve you well.\nGood luck...")
-    codex_choice = input("Select a chapter:\na) Journal\nb) Monsters\nc) Items\n d) Abilities\ne) Exit")
-    while codex_choice != "e" and codex_choice != "E":
-        if codex_choice == "a" or codex_choice == "A":
+    codex_choice = input("Select a chapter:\na) Journal\nb) Monsters\nc) Items\n d) Abilities\ne) Exit").lower()
+    while codex_choice != "e":
+        if codex_choice == "a":
             print("Error! This codex chapter has not been added yet.")
             print("Create an issue on GitHub: github.com/estella144/layers-of-descent/issues/new")
             print("[Error 0x20]")
-        if codex_choice == "b" or codex_choice == "B":
+        elif codex_choice == "b":
             print("Error! This codex chapter has not been added yet.")
             print("Create an issue on GitHub: github.com/estella144/layers-of-descent/issues/new")
             print("[Error 0x20]")
-        if codex_choice == "c" or codex_choice == "C":
+        if codex_choice == "c":
             print("Error! This codex chapter has not been added yet.")
             print("Create an issue on GitHub: github.com/estella144/layers-of-descent/issues/new")
             print("[Error 0x20]")
-        if codex_choice == "d" or codex_choice == "D":
+        if codex_choice == "d":
             print("Error! This codex chapter has not been added yet.")
             print("Create an issue on GitHub: github.com/estella144/layers-of-descent/issues/new")
             print("[Error 0x20]")
+        codex_choice = ""
     print("Exiting Codex...")
     input()
 
