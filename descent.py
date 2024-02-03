@@ -24,6 +24,8 @@
     #Enjoy!                             #
     #####################################
 
+import hashlib
+
 NOTICE = """Layers of Descent Copyright (C) 2024 LoD Development Team
 This program comes with ABSOLUTELY NO WARRANTY; for details type "W".
 This is free software, and you are welcome to redistribute it
@@ -211,8 +213,26 @@ player_attack=1
 player_defense=1
 player_magic=1
 kills=0
-Choice="x"
+choice="x"
 #definitions
+
+def end_cs():
+    input("It is defeated...")
+    input("It is all finally over...")
+    input("The door opens. You run...")
+    input("...")
+    input("...")
+    input("...")
+    input("You reach the top, and you see, at last...")
+    input("THE LIGHT...")
+    input("There is a strange feeling...")
+    input("Suddenly, you fall over!")
+    input("As you lie on the soft earth, you think your last thoughts...")
+    input("You have come so far...")
+    input("It all ends now...")
+    input("You feel tired...")
+    input("You close your eyes.")
+    input("You Win!")
 
 def codex():
     """Prints a comprehensive manual"""
@@ -299,47 +319,51 @@ def RoomDecide(Rm,Rn): #decides what to do in the room
     global GOLD
     global hp
     global base_hp
-    global Choice
+    global choice
     global RoomHeals
 
-    while Choice != "a":
+    while choice != "a":
         print("\na) Look\nb)Check Stats\nc)Heal\nd)Open Codex\ne)Move\n")
-        Choice = input()
-        if Choice == "a":
-            print("You ")
-        elif Choice == "b":
-            print("You have:\n",player_attack,"At\n",player_defense,"Df\n",player_magic,"Mg\n",hp, "Hp\n",GOLD,"GOLD\n\nYour Max Hp is",base_hp,"\nYou are in room",Rn,Rm)
-        elif Choice == "d":
-            codex()
-        elif Choice == "c":
-            if RoomHeals<0:
-                if hp == base_hp:
-                    print("You are already at full health")
+        choice = input()
+        while choice != "e":
+            if choice == "a":
+                print("You...?")
+            elif choice == "b":
+                print("You have:\n",player_attack,"At\n",player_defense,"Df\n",player_magic,"Mg\n",hp, "Hp\n",GOLD,"GOLD\n\nYour Max Hp is",base_hp,"\nYou are in room",Rn,Rm)
+            elif choice == "d":
+                codex()
+            elif choice == "c":
+                if RoomHeals<0:
+                    if hp == base_hp:
+                        print("You are already at full health")
+                    else:
+                        hp=hp+player_magic
+                        RoomHeals=RoomHeals-1
+                        print("There is a bright flash of light\nYou now have",hp,"\nYour Max hp is",base_hp,"\nYou can only heal once per room")
+                        print("You have",RoomHeals,"heal(s) left for this room")
                 else:
-                    hp=hp+player_magic
-                    RoomHeals=RoomHeals-1
-                    print("There is a bright flash of light\nYou now have",hp,"\nYour Max hp is",base_hp,"\nYou can only heal once per room")
-                    print("You have",RoomHeals,"heal(s) left for this room")
-            else:
-                print("You have used all your healing spells for this room")
-        elif Choice == "e":
-            
+                    print("You have used all your healing spells for this room")
+            elif choice == "e":
+                print("Not implemented yet")
 
 print(NOTICE)
 print()
-print("Welcome to Layers of Descent ^TM^.")
+print("Welcome to Layers of Descent ^TM^ version 0.1 [0c917f5].")
 print("Press enter to continue...")
 print("[C=Credits] [W=Warranty] [L=Conditions]")
 
 while True:
-    Choice = input("").lower()
-    if Choice not in ("c", "w", "l"):
+    choice = input("").lower()
+    if hashlib.sha256(bytes(choice, "utf-8")).hexdigest() == '151b01cf3ebced87a1b70c62adc9fe6f1b1da49c20bdce0d4f5dc47b3f8021ef':
+        end_cs()
         break
-    elif Choice == "c":
+    elif choice not in ("c", "w", "l"):
+        break
+    elif choice == "c":
         print(CREDITS)
-    elif Choice == "w":
+    elif choice == "w":
         print(WARRANTY)
-    elif Choice == "l":
+    elif choice == "l":
         for i in CONDITIONS:
             print(i)
             input("[ENTER=Next page]")
