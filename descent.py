@@ -303,10 +303,10 @@ def RoomDecide(Rm,Rn): #decides what to do in the room
     global RoomHeals
 
     while Choice != "a":
-        print("\na) Look\nb)Check Stats\nc)Heal\nd)Open Codex")
+        print("\na) Look\nb)Check Stats\nc)Heal\nd)Open Codex\ne)Move\n")
         Choice = input()
         if Choice == "a":
-            print("")
+            print("You ")
         elif Choice == "b":
             print("You have:\n",player_attack,"At\n",player_defense,"Df\n",player_magic,"Mg\n",hp, "Hp\n",GOLD,"GOLD\n\nYour Max Hp is",base_hp,"\nYou are in room",Rn,Rm)
         elif Choice == "d":
@@ -322,6 +322,8 @@ def RoomDecide(Rm,Rn): #decides what to do in the room
                     print("You have",RoomHeals,"heal(s) left for this room")
             else:
                 print("You have used all your healing spells for this room")
+        elif Choice == "e":
+            
 
 print(NOTICE)
 print()
