@@ -200,7 +200,7 @@ unpacking, reading or copying."""
 
 CONDITIONS = [CONDITIONS_1, CONDITIONS_2, CONDITIONS_3, CONDITIONS_4,
               CONDITIONS_5, CONDITIONS_6, CONDITIONS_7]
-#If you see this message you are a dirty hacker get out of the code right now
+
 #variables
 Item1 = 0.0
 base_hp=20
@@ -217,20 +217,28 @@ Choice="x"
 def codex():
     """Prints a comprehensive manual"""
     print("CODEX CAVERNA\n\nWelcome to the Codex of Caverna. An indespensible guide to these deadly tunnels.\nThis is not the only codex you will find down here, but I hope it will serve you well.\nGood luck...")
-    CODEXCHOICE=input("Select a chapter:\na) Journal\nb) Monsters\nc) Items\n d) Abilities\ne) Exit")
-    while CODEXCHOICE != "e" and CODEXCHOICE != "E":
-        if CODEXCHOICE == "a" or CODEXCHOICE == "A":
-            print("")
-        if CODEXCHOICE == "b" or CODEXCHOICE == "B":
-            print("")
-        if CODEXCHOICE == "c" or CODEXCHOICE == "C":
-            print("")
-        if CODEXCHOICE == "d" or CODEXCHOICE == "D":
-            print("")
-    print("exit")
+    codex_choice = input("Select a chapter:\na) Journal\nb) Monsters\nc) Items\n d) Abilities\ne) Exit")
+    while codex_choice != "e" and codex_choice != "E":
+        if codex_choice == "a" or codex_choice == "A":
+            print("Error! This codex chapter has not been added yet.")
+            print("Create an issue on GitHub: github.com/estella144/layers-of-descent/issues/new")
+            print("[Error 0x20]")
+        if codex_choice == "b" or codex_choice == "B":
+            print("Error! This codex chapter has not been added yet.")
+            print("Create an issue on GitHub: github.com/estella144/layers-of-descent/issues/new")
+            print("[Error 0x20]")
+        if codex_choice == "c" or codex_choice == "C":
+            print("Error! This codex chapter has not been added yet.")
+            print("Create an issue on GitHub: github.com/estella144/layers-of-descent/issues/new")
+            print("[Error 0x20]")
+        if codex_choice == "d" or codex_choice == "D":
+            print("Error! This codex chapter has not been added yet.")
+            print("Create an issue on GitHub: github.com/estella144/layers-of-descent/issues/new")
+            print("[Error 0x20]")
+    print("Exiting Codex...")
     input()
-        
-    
+
+
 def fight(enemy_attack,enemy_defense,enemy_name,EnSt,EnWk,EnDd,reward,Esc):#basis for a simple customisable fight
     global player_attack
     global player_defense
