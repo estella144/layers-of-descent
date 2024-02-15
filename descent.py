@@ -3,8 +3,10 @@
 #
 # This file is part of Layers of Descent.
 #
-# Layers of Descent is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
+# Layers of Descent is free software: however you cannot redistribute it, but it can
+# be modified. Redistribution/sale of this software/product is against the law
+# and be playing/editing/owning this software you consent to all of these terms and 
+# conditions. This software is under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
@@ -28,13 +30,15 @@ import hashlib
 
 NOTICE = """Layers of Descent Copyright (C) 2024 LoD Development Team
 This program comes with ABSOLUTELY NO WARRANTY; for details type "W".
-This is free software, and you are welcome to redistribute it
-under certain conditions; type "L" for details."""
+This is free software, and the code can be modified. However, this code
+cannot be redistributed and those who make retistribute/sell this product
+are breaking the law; type "L" for details."""
 
 CREDITS = """Layers of Descent Credits
 
 MyBrianHurt5 - concept and code
-estella144 - concept and code"""
+estella144 - concept and code
+isTopaz - concept, music and Terms and Conditions
 
 WARRANTY = """15. Disclaimer of Warranty.
 
