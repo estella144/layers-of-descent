@@ -25,6 +25,14 @@
     #such as a fight engine.            #
     #Enjoy!                             #
     #####################################
+TESTPERMS = str (input ("Do you have the test key?)
+if TESTPERMS == "BRAM BARBER IS LACKING":
+    print("yes, yes he is")
+    TESTSWORD = 1
+    TESTARMOUR = 1
+else
+    TESTSWORD = 0
+    TESTARMOUR = 0
 
 import hashlib
 
@@ -331,7 +339,7 @@ def RoomDecide(Rm,Rn): #decides what to do in the room
         choice = input()
         while choice != "e":
             if choice == "a":
-                print("You...?")
+                print("The descent continues...")
             elif choice == "b":
                 print("You have:\n",player_attack,"At\n",player_defense,"Df\n",player_magic,"Mg\n",hp, "Hp\n",GOLD,"GOLD\n\nYour Max Hp is",base_hp,"\nYou are in room",Rn,Rm)
             elif choice == "d":
@@ -421,10 +429,19 @@ while True:
         print("Invalid choice: " + str(Item1))
 
 input("[ENTER=Continue]")
-
+if TESTSWORD= 1:
+    player_attack=1000.0
+if TESTARMOUR= 1:
+    player_defense=1000.0 
 print("You step into the first room...")
 input("[ENTER=Continue]")
 
 fight(5,5,"Goblint"," jumps out!\nIt's a monster! Use your skills to survive this attack!"," is shedding everywhere. It looks weak!","Dust explodes everywhere!",5,1)
 RoomDecide("Beginnner room.",1)
-print(kills)
+print ("The room is dimly lit by torches. There are some barrels to your left, a stone panel to your right and a door directly ahead. 
+Lever_0_1_1 = 0
+Open_0_1_1 = 0
+Exit_0_1_1 = 0
+while Exit_0_1_1 == 0:
+    Action_0_1_1=input ("Do you:\na) Search the barrels\nb) Inspect the panel\nc) Try the door\nd)Wait")
+    if (Action_0_1_1== "a" or Action_0_1_1== "B" 
