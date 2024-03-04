@@ -25,12 +25,12 @@
     #such as a fight engine.            #
     #Enjoy!                             #
     #####################################
-TESTPERMS = str (input ("Do you have the test key?)
+TESTPERMS = str (input ("Do you have the test key?")
 if TESTPERMS == "BRAM BARBER IS LACKING":
     print("yes, yes he is")
     TESTSWORD = 1
     TESTARMOUR = 1
-else
+else:
     TESTSWORD = 0
     TESTARMOUR = 0
 
@@ -337,7 +337,7 @@ def RoomDecide(Rm,Rn): #decides what to do in the room
     while choice != "a":
         print("\na) Look\nb)Check Stats\nc)Heal\nd)Open Codex\ne)Move\n")
         choice = input()
-        while choice != "e":
+        while (choice != "a" or choice != "A" :
             if choice == "a":
                 print("The descent continues...")
             elif choice == "b":
@@ -444,4 +444,5 @@ Open_0_1_1 = 0
 Exit_0_1_1 = 0
 while Exit_0_1_1 == 0:
     Action_0_1_1=input ("Do you:\na) Search the barrels\nb) Inspect the panel\nc) Try the door\nd)Wait")
-    if (Action_0_1_1== "a" or Action_0_1_1== "B" 
+    if (Action_0_1_1== "a" or Action_0_1_1== "B"):
+        print("")
