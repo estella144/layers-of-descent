@@ -442,11 +442,12 @@ print ("The room is dimly lit by torches. There are some barrels to your left, a
 Lever_0_1_1 = 0
 Open_0_1_1 = 0
 Exit_0_1_1 = 0
+Exit_0_1_2 = 0
 while Exit_0_1_1 == 0:
     Action_0_1_1=input ("Do you:\na) Search the barrels\nb) Inspect the panel\nc) Try the door\nd)Wait")
     if (Action_0_1_1== "a" or Action_0_1_1== "A"):
         print("The barrels lie on the floor, slowly rotting")
-        while True
+        while True:
             Action_0_1_2 =input ("Do you:\na) Try to open the barrels\nb) Try to break the barrels \nc) Leave the barrels")
             if (Action_0_1_2== "a" or Action_0_1_2== "A"):
                 if (Lever_0_1_1== 0):
