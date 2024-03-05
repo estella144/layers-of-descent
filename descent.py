@@ -438,11 +438,26 @@ input("[ENTER=Continue]")
 
 fight(5,5,"Goblint"," jumps out!\nIt's a monster! Use your skills to survive this attack!"," is shedding everywhere. It looks weak!","Dust explodes everywhere!",5,1)
 RoomDecide("Beginnner room.",1)
-print ("The room is dimly lit by torches. There are some barrels to your left, a stone panel to your right and a door directly ahead. 
+print ("The room is dimly lit by torches. There are some barrels to your left, a stone panel to your right and a door directly ahead.") 
 Lever_0_1_1 = 0
 Open_0_1_1 = 0
 Exit_0_1_1 = 0
 while Exit_0_1_1 == 0:
     Action_0_1_1=input ("Do you:\na) Search the barrels\nb) Inspect the panel\nc) Try the door\nd)Wait")
-    if (Action_0_1_1== "a" or Action_0_1_1== "B"):
-        print("")
+    if (Action_0_1_1== "a" or Action_0_1_1== "A"):
+        print("The barrels lie on the floor, slowly rotting")
+        while True
+            Action_0_1_2 =input ("Do you:\na) Try to open the barrels\nb) Try to break the barrels \nc) Leave the barrels")
+            if (Action_0_1_2== "a" or Action_0_1_2== "A"):
+                if (Lever_0_1_1== 0):
+                    print ("The barrels are heavy with rot, but the lid is tightly secured")
+                elif (Lever_0_1_1== 1):
+                    print ("The barrels are in ruins. There is no lid to open.")
+            if (Action_0_1_2== "b" or Action_0_1_2== "B"):
+                if (Lever_0_1_1== 0):
+                    print ("You smash the barrels open. You collect a loose LEVER from inside")
+                elif (Lever_0_1_1== 1):
+                    print ("The barrels are in ruins. There is nothing inside.")
+            if (Action_0_1_2== "c" or Action_0_1_2== "C"):
+                break 
+
